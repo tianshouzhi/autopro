@@ -1,2 +1,9 @@
 # autopro
-Eclipse插件形式的代码生成器
+Eclipse插件形式的代码生成器，用于生成JavaWeb项目。
+只要设计好数据库，就可以利用本插件来自动生成一个可以直接运行的javaweb应用。
+目前支持的数据库只有mysql，未来会考虑加入支持oracle。
+Dao层生成的代码是使用的是mybatis
+service层框架使用的是Spring
+Web层使用的是SpringMVC
+前段UI使用的是BootStrap+Jquery。
+最终生成的是一个Maven项目。
