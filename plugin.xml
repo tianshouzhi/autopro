@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+         
+      <command
+            categoryId="com.tianshouzhi.autopro.category1"
+            id="com.tianshouzhi.autopro.command.run"
+            name="%command.name">
+      </command>
+      <category
+            id="com.tianshouzhi.autopro.category1"
+            name="%category.name">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="com.tianshouzhi.autopro.command.run"
+               icon="icons/lvmama.png"
+               label="%command.label"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     operator="or">
+                  <instanceof 
+                        value="org.eclipse.jdt.internal.core.JavaProject">
+                  </instanceof>
+               </iterate>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.tianshouzhi.autopro.Runner"
+            commandId="com.tianshouzhi.autopro.command.run">
+      </handler>
+   </extension>
+
+</plugin>
